@@ -529,8 +529,8 @@
         <span>Unity / MediaPipe / Shader / VFX</span><span>·</span><span>2026</span>
       </div>
     </div>
-    <figure class="frame-img fit-contain r-4x3" style="background:rgba(var(--paper-rgb),.04);border:1px solid rgba(var(--paper-rgb),.16)" data-anim="right">
-      <img src="images/jiuwei-mask.png" alt="九尾面具原型素材">
+    <figure class="frame-img r-16x9" style="background:rgba(var(--paper-rgb),.04);border:1px solid rgba(var(--paper-rgb),.16)" data-anim="right">
+      <img src="images/image2/01-cover.png" alt="image2 生成的山海经 AI 互动艺术封面图">
     </figure>
   </div>
   <div class="foot">
@@ -559,8 +559,8 @@
       </div>
     </div>
     <figure class="frame-img r-16x10" style="margin-top:1vh" data-anim="right">
-      <img src="images/02-mask-study.jpg" alt="山海经互动面具原型素材拼贴">
-      <figcaption class="img-cap">Project Assets · Mask Variants / Pattern / Tail / Jaw</figcaption>
+      <img src="images/image2/02-installation.png" alt="image2 生成的山海经互动装置场景图">
+      <figcaption class="img-cap">Image2 Visual · Interactive Installation / Mask / Tracking</figcaption>
     </figure>
   </div>
   <div class="foot">
@@ -1226,23 +1226,23 @@
 
 <script>
 const visualPlan = {
-  3:['visual-backdrop','从符号到行为'],
-  4:['visual-backdrop','高校游戏设计'],
-  5:['visual-ambient','传统文化互动设计'],
-  6:['visual-side','概念设计'],
-  7:['visual-band','原型闭环'],
-  9:['visual-backdrop','AI 辅助创作'],
-  10:['visual-ambient','AI 与游戏'],
-  11:['visual-backdrop','AI 游戏版图'],
-  12:['visual-band','LLM 交互管线'],
-  13:['visual-side','虚拟人交互'],
-  14:['visual-ambient','零基础入门'],
-  15:['visual-backdrop','三档工作坊'],
-  16:['visual-band','Trae 雷霆战机'],
-  17:['visual-side','MediaPipe 体感游戏'],
-  18:['visual-backdrop','Agent Studio'],
-  19:['visual-band','提示词设计卡'],
-  20:['visual-ambient','设计判断']
+  3:['visual-backdrop','从符号到行为','02-installation.png'],
+  4:['visual-backdrop','高校游戏设计','04-education.png'],
+  5:['visual-ambient','传统文化互动设计','05-culture-interaction.png'],
+  6:['visual-side','概念设计','05-culture-interaction.png'],
+  7:['visual-band','原型闭环','07-prototype-workflow.png'],
+  9:['visual-backdrop','AI 辅助创作','07-prototype-workflow.png'],
+  10:['visual-ambient','AI 与游戏','10-ai-games.png'],
+  11:['visual-backdrop','AI 游戏版图','10-ai-games.png'],
+  12:['visual-band','LLM 交互管线','12-llm-interaction.png'],
+  13:['visual-side','虚拟人交互','13-virtual-human.png'],
+  14:['visual-ambient','零基础入门','16-trae-shooter.png'],
+  15:['visual-backdrop','三档工作坊','16-trae-shooter.png'],
+  16:['visual-band','Trae 雷霆战机','16-trae-shooter.png'],
+  17:['visual-side','MediaPipe 体感游戏','17-mediapipe-game.png'],
+  18:['visual-backdrop','Agent Studio','18-agent-studio.png'],
+  19:['visual-band','提示词设计卡','18-agent-studio.png'],
+  20:['visual-ambient','设计判断','01-cover.png']
 };
 document.querySelectorAll('.slide').forEach((slide, i)=>{
   const page = i + 1;
@@ -1253,7 +1253,7 @@ document.querySelectorAll('.slide').forEach((slide, i)=>{
   fig.className = 'visual-stage';
   fig.dataset.label = plan[1];
   const img = document.createElement('img');
-  img.src = `images/visuals/slide-${String(page).padStart(2, '0')}.svg`;
+  img.src = `images/image2/${plan[2]}`;
   img.alt = `${plan[1]}视觉图`;
   img.loading = 'eager';
   fig.appendChild(img);

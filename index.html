@@ -1253,7 +1253,7 @@ document.querySelectorAll('.slide').forEach((slide, i)=>{
   fig.className = 'visual-stage';
   fig.dataset.label = plan[1];
   const img = document.createElement('img');
-  img.src = `images/ai_panels/slide-${String(page).padStart(2, '0')}.jpg`;
+  img.src = `images/visuals/slide-${String(page).padStart(2, '0')}.svg`;
   img.alt = `${plan[1]}视觉图`;
   img.loading = 'eager';
   fig.appendChild(img);

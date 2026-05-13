@@ -180,6 +180,26 @@
   .frame-img.h-22{height:22vh}
   .frame-img.h-26{height:26vh}
   .frame-img.h-28{height:28vh}
+  .frame-img.h-32{height:32vh}
+  .frame-img.h-36{height:36vh}
+  .frame-img.h-40{height:40vh}
+  .frame-img.h-44{height:44vh}
+  .frame-img.h-48{height:48vh}
+  /* banner：横向通栏图，object-position 居中以保留主体 */
+  .frame-img.banner{aspect-ratio:auto;max-height:none;border-radius:6px}
+  .frame-img.banner > img{object-position:center center}
+  .frame-img.no-crop > img{object-position:center center}
+  .frame-img.center-crop > img{object-position:center center}
+  /* 面具装饰：去掉背景与边框，纯透明 PNG 漂浮在版面上 */
+  .deco-mask{position:absolute;pointer-events:none;z-index:1;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+  .slide.light .deco-mask{filter:drop-shadow(0 18px 36px rgba(var(--ink-rgb),.18))}
+  .deco-mask img{width:100%;height:100%;object-fit:contain;display:block}
+  /* 标题区右上角小面具装饰（不抢戏） */
+  .deco-mask.corner-tr{top:9vh;right:5vw;width:18vw;height:18vw;opacity:.85}
+  .deco-mask.corner-br{bottom:11vh;right:5vw;width:18vw;height:18vw;opacity:.9}
+  .deco-mask.corner-bl{bottom:11vh;left:5vw;width:16vw;height:16vw;opacity:.85}
+  .deco-mask.float-md{width:22vw;height:22vw}
+  .deco-mask.float-sm{width:14vw;height:14vw;opacity:.7}
   .frame-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1vw;margin-top:.8vh;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.72}
   .frame-cap .pf{font-family:var(--serif-zh);font-weight:600;font-size:max(13px,1vw);letter-spacing:.04em;text-transform:none;opacity:.94}
   .frame-cap .nb{font-family:var(--serif-en);font-style:italic;font-size:max(15px,1.2vw);letter-spacing:.02em;text-transform:none;opacity:.88}
@@ -574,29 +594,34 @@
     <div>Case · Interaction</div>
     <div>03 / 20</div>
   </div>
-  <div class="frame" style="padding-top:5vh">
-    <div class="kicker" data-anim>它真正完成的事</div>
-    <h2 class="h-xl" style="max-width:76vw" data-anim>把“文化符号”从图像，推进到行为。</h2>
-    <div class="grid-4" style="margin-top:7vh">
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Face</div>
-        <div class="stat-nb" style="font-size:4.2vw">脸部</div>
-        <div class="stat-note">面具跟随鼻尖、额头、下巴、眼角等关键点，保持位置、旋转与尺度的稳定。</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Gesture</div>
-        <div class="stat-nb" style="font-size:4.2vw">手势</div>
-        <div class="stat-note">双手靠近脸部触发佩戴，任意手横向滑动切换面具变体。</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Embodiment</div>
-        <div class="stat-nb" style="font-size:4.2vw">身体</div>
-        <div class="stat-note">嘴部开合驱动下颌，头部速度影响毛发与耳坠物理摆动。</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Feedback</div>
-        <div class="stat-nb" style="font-size:4.2vw">反馈</div>
-        <div class="stat-note">Shader、VFX 与音频把“被识别”转化为可感知的视觉与听觉回应。</div>
+  <div class="frame" style="display:grid;grid-template-columns:5fr 7fr;gap:4vw;align-items:center;padding-top:4vh;min-height:78vh">
+    <figure class="frame-img fit-contain" style="aspect-ratio:1/1;max-height:64vh;background:radial-gradient(circle at 50% 45%,rgba(var(--paper-rgb),.08) 0%,rgba(var(--paper-rgb),0) 65%);border:0" data-anim="left">
+      <img src="images/jiuwei-mask.png" alt="九尾面具 · 角色作为行为入口" style="object-fit:contain;object-position:center center">
+    </figure>
+    <div class="col" style="gap:2.4vh">
+      <div class="kicker" data-anim>它真正完成的事</div>
+      <h2 class="h-xl" style="font-size:5vw" data-anim>把“文化符号”从图像，推进到行为。</h2>
+      <div class="grid-4" style="margin-top:2vh;gap:3vh 3vw">
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Face</div>
+          <div class="stat-nb" style="font-size:3.2vw">脸部</div>
+          <div class="stat-note">面具跟随鼻尖、额头、下巴、眼角等关键点，保持位置、旋转与尺度的稳定。</div>
+        </div>
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Gesture</div>
+          <div class="stat-nb" style="font-size:3.2vw">手势</div>
+          <div class="stat-note">双手靠近脸部触发佩戴，任意手横向滑动切换面具变体。</div>
+        </div>
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Embodiment</div>
+          <div class="stat-nb" style="font-size:3.2vw">身体</div>
+          <div class="stat-note">嘴部开合驱动下颌，头部速度影响毛发与耳坠物理摆动。</div>
+        </div>
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Feedback</div>
+          <div class="stat-nb" style="font-size:3.2vw">反馈</div>
+          <div class="stat-note">Shader、VFX 与音频把“被识别”转化为可感知的视觉与听觉回应。</div>
+        </div>
       </div>
     </div>
   </div>
@@ -611,27 +636,27 @@
     <div>Context · Game Design Education</div>
     <div>04 / 20</div>
   </div>
-  <div class="frame" style="padding-top:5vh">
-    <div class="kicker" data-anim>当今高校游戏设计在做什么</div>
-    <h2 class="h-xl" style="font-size:5.2vw;max-width:82vw" data-anim>游戏设计不再只是“做游戏”，而是在训练跨媒介的体验建构能力。</h2>
-    <div class="grid-3" style="margin-top:7vh">
-      <div class="pillar" data-anim>
-        <i data-lucide="blocks" class="ico-lg"></i>
-        <div class="t">项目制协作</div>
-        <div class="d">从游戏机制、美术、音频、工程到用户研究，学生在真实团队里反复做 playable prototype。</div>
+  <div class="frame" style="display:grid;grid-template-columns:6fr 6fr;gap:4vw;align-items:center;padding-top:4vh;min-height:78vh">
+    <figure class="frame-img" style="aspect-ratio:16/10;max-height:62vh;margin:0" data-anim="left">
+      <img src="images/image2/04-education.png" alt="高校游戏设计工作室">
+      <figcaption class="img-cap">Studio Scene · Project-based Learning</figcaption>
+    </figure>
+    <div class="col" style="gap:2.6vh">
+      <div class="kicker" data-anim>当今高校游戏设计在做什么</div>
+      <h2 class="h-xl" style="font-size:4.4vw" data-anim>游戏设计不再只是“做游戏”，而是训练跨媒介的体验建构能力。</h2>
+      <div class="col" style="gap:2.6vh;margin-top:1vh">
+        <div class="rowline" data-anim>
+          <div class="k">项目制协作</div><div class="v">游戏机制、美术、音频、工程到用户研究，在真实团队里反复做 playable prototype。</div><div class="m">Studio</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">实验性交互</div><div class="v">课程与实验室关注 XR、体感、装置、互动叙事与非传统输入。</div><div class="m">XR · Body</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">文化与批评</div><div class="v">游戏被视为文化形式：研究规则、玩家心理、社会议题与公共表达。</div><div class="m">Theory</div>
+        </div>
       </div>
-      <div class="pillar" data-anim>
-        <i data-lucide="scan-eye" class="ico-lg"></i>
-        <div class="t">实验性交互</div>
-        <div class="d">课程和实验室越来越关注 XR、体感、装置、互动叙事与非传统输入。</div>
-      </div>
-      <div class="pillar" data-anim>
-        <i data-lucide="landmark" class="ico-lg"></i>
-        <div class="t">文化与批评</div>
-        <div class="d">游戏被视为文化形式：既研究规则、玩家心理，也研究社会议题、历史叙事与公共表达。</div>
-      </div>
+      <p class="meta" style="margin-top:2vh;font-size:max(11px,.82vw)" data-anim>References: USC Games / NYU Game Center / CMU ETC</p>
     </div>
-    <p class="meta" style="margin-top:6vh" data-anim>References: USC Games / NYU Game Center / CMU ETC official program descriptions</p>
   </div>
   <div class="foot">
     <div>教育语境</div>
@@ -662,15 +687,21 @@
     <div>Concept · Design Logic</div>
     <div>06 / 20</div>
   </div>
-  <div class="frame grid-2-6-6" style="padding-top:5vh">
-    <div class="col">
-      <div class="kicker" data-anim>概念设计</div>
-      <h2 class="h-xl" style="font-size:5.5vw" data-anim>从“山海经怪物”到“可交互身份”。</h2>
+  <div class="frame grid-2-6-6" style="padding-top:5vh;align-items:start">
+    <div class="col" style="gap:3vh">
+      <div>
+        <div class="kicker" data-anim>概念设计</div>
+        <h2 class="h-xl" style="font-size:4.8vw" data-anim>从“山海经怪物”到“可交互身份”。</h2>
+      </div>
       <p class="lead" data-anim>
         概念不是先问“画什么”，而是先问“观众怎么进入它”：是佩戴、召唤、变身，还是被角色反向凝视。
       </p>
+      <figure class="frame-img" style="aspect-ratio:16/10;max-height:38vh;margin-top:1vh;background:rgba(var(--paper-rgb),.92);border:1px solid rgba(var(--paper-rgb),.18)" data-anim>
+        <img src="images/02-mask-study.jpg" alt="九尾 / 朱厌面具设计稿" style="object-position:center center">
+        <figcaption class="img-cap">Design Sheet · JiuWei / ZhuYan Mask Variants</figcaption>
+      </figure>
     </div>
-    <div class="col" style="gap:3vh">
+    <div class="col" style="gap:2.6vh">
       <div class="rowline" data-anim>
         <div class="k">角色</div><div class="v">九尾、朱厌等传统意象，不是皮肤，而是行为模式的入口。</div><div class="m">Character</div>
       </div>
@@ -696,9 +727,17 @@
     <div>Prototype · Workflow</div>
     <div>07 / 20</div>
   </div>
-  <div class="frame" style="padding-top:5vh">
-    <div class="kicker" data-anim>原型设计</div>
-    <h2 class="h-xl" style="font-size:5vw" data-anim>先做“能玩的最小闭环”，再慢慢变漂亮。</h2>
+  <div class="frame" style="padding-top:4vh">
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:4vw;align-items:end">
+      <div>
+        <div class="kicker" data-anim>原型设计</div>
+        <h2 class="h-xl" style="font-size:4.8vw" data-anim>先做“能玩的最小闭环”，再慢慢变漂亮。</h2>
+      </div>
+      <figure class="frame-img" style="aspect-ratio:16/10;max-height:30vh;margin:0" data-anim="right">
+        <img src="images/image2/07-prototype-workflow.png" alt="原型工作流：从概念到 playable">
+        <figcaption class="img-cap">Workspace · Concept → Engine → Feedback</figcaption>
+      </figure>
+    </div>
     <div class="pipeline-section">
       <div class="pipeline-label">Prototype Loop</div>
       <div class="pipeline" data-cols="5">
@@ -770,9 +809,12 @@
     <div>AI Assistance · Behind The Work</div>
     <div>09 / 20</div>
   </div>
+  <div class="deco-mask corner-tr float-sm" aria-hidden="true" data-anim>
+    <img src="images/zhuyan-mask.png" alt="">
+  </div>
   <div class="frame" style="padding-top:5vh">
     <div class="kicker" data-anim>这一切背后，离不开 AI 的辅助</div>
-    <h2 class="h-xl" style="font-size:5.4vw;max-width:80vw" data-anim>AI 不是替你完成作品，而是把“不会”变成“可以先试试”。</h2>
+    <h2 class="h-xl" style="font-size:5.4vw;max-width:74vw" data-anim>AI 不是替你完成作品，而是把“不会”变成“可以先试试”。</h2>
     <div class="grid-6" style="margin-top:7vh">
       <div class="stat-card" data-anim>
         <div class="stat-label">Research</div>
@@ -835,39 +877,39 @@
     <div>AI + Games · Map</div>
     <div>11 / 20</div>
   </div>
-  <div class="frame" style="padding-top:5vh">
+  <div class="frame" style="padding-top:4vh">
     <div class="kicker" data-anim>当前可见的结合方式</div>
-    <h2 class="h-xl" style="font-size:5.2vw;max-width:82vw" data-anim>AI 正在进入游戏的三个层面：生产、交互、运营。</h2>
-    <div class="grid-6" style="margin-top:7vh">
-      <div class="pillar" data-anim>
+    <h2 class="h-xl" style="font-size:4.2vw;max-width:84vw" data-anim>AI 正在进入游戏的三个层面：生产、交互、运营。</h2>
+    <div class="grid-6" style="margin-top:3vh;gap:3.2vh 5vw;align-content:center">
+      <div class="pillar" style="gap:1.2vh" data-anim>
         <i data-lucide="palette" class="ico-md"></i>
-        <div class="t">美术与音频生成</div>
-        <div class="d">概念图、贴图、UI、占位语音、音效草稿，提升早期迭代速度。</div>
+        <div class="t" style="font-size:1.95vw">美术与音频生成</div>
+        <div class="d" style="font-size:max(13px,.98vw);line-height:1.55">概念图、贴图、UI、占位语音、音效草稿，提升早期迭代速度。</div>
       </div>
-      <div class="pillar" data-anim>
+      <div class="pillar" style="gap:1.2vh" data-anim>
         <i data-lucide="code-2" class="ico-md"></i>
-        <div class="t">代码与工具</div>
-        <div class="d">从玩法脚本到编辑器工具，AI IDE 让小团队更快做出可运行版本。</div>
+        <div class="t" style="font-size:1.95vw">代码与工具</div>
+        <div class="d" style="font-size:max(13px,.98vw);line-height:1.55">从玩法脚本到编辑器工具，AI IDE 让小团队更快做出可运行版本。</div>
       </div>
-      <div class="pillar" data-anim>
+      <div class="pillar" style="gap:1.2vh" data-anim>
         <i data-lucide="message-circle" class="ico-md"></i>
-        <div class="t">智能 NPC</div>
-        <div class="d">LLM 让角色能听懂玩家语言，结合规则系统后驱动任务和行为。</div>
+        <div class="t" style="font-size:1.95vw">智能 NPC</div>
+        <div class="d" style="font-size:max(13px,.98vw);line-height:1.55">LLM 让角色能听懂玩家语言，结合规则系统后驱动任务和行为。</div>
       </div>
-      <div class="pillar" data-anim>
+      <div class="pillar" style="gap:1.2vh" data-anim>
         <i data-lucide="person-standing" class="ico-md"></i>
-        <div class="t">虚拟人</div>
-        <div class="d">语音识别、对话、表情、动作与数字人形象连成实时互动体。</div>
+        <div class="t" style="font-size:1.95vw">虚拟人</div>
+        <div class="d" style="font-size:max(13px,.98vw);line-height:1.55">语音识别、对话、表情、动作与数字人形象连成实时互动体。</div>
       </div>
-      <div class="pillar" data-anim>
+      <div class="pillar" style="gap:1.2vh" data-anim>
         <i data-lucide="shuffle" class="ico-md"></i>
-        <div class="t">程序化内容</div>
-        <div class="d">关卡、任务、叙事片段与世界状态可以按玩家行为动态生成。</div>
+        <div class="t" style="font-size:1.95vw">程序化内容</div>
+        <div class="d" style="font-size:max(13px,.98vw);line-height:1.55">关卡、任务、叙事片段与世界状态可以按玩家行为动态生成。</div>
       </div>
-      <div class="pillar" data-anim>
+      <div class="pillar" style="gap:1.2vh" data-anim>
         <i data-lucide="bug" class="ico-md"></i>
-        <div class="t">测试与调参</div>
-        <div class="d">自动玩测、Bug 复现、平衡性分析和玩家反馈摘要逐渐进入流程。</div>
+        <div class="t" style="font-size:1.95vw">测试与调参</div>
+        <div class="d" style="font-size:max(13px,.98vw);line-height:1.55">自动玩测、Bug 复现、平衡性分析和玩家反馈摘要逐渐进入流程。</div>
       </div>
     </div>
   </div>
@@ -882,10 +924,18 @@
     <div>Interaction · LLM</div>
     <div>12 / 20</div>
   </div>
-  <div class="frame" style="padding-top:5vh">
-    <div class="kicker" data-anim>大语言模型的交互</div>
-    <h2 class="h-xl" style="font-size:5.4vw;max-width:82vw" data-anim>LLM 让游戏从“选项菜单”走向“自然语言协商”。</h2>
-    <div class="pipeline-section" style="margin-top:6vh">
+  <div class="frame" style="padding-top:4vh">
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:4vw;align-items:end">
+      <div>
+        <div class="kicker" data-anim>大语言模型的交互</div>
+        <h2 class="h-xl" style="font-size:4.7vw" data-anim>LLM 让游戏从“选项菜单”走向“自然语言协商”。</h2>
+      </div>
+      <figure class="frame-img" style="aspect-ratio:16/9;max-height:28vh;margin:0" data-anim="right">
+        <img src="images/image2/12-llm-interaction.png" alt="LLM 驱动的游戏对话场景">
+        <figcaption class="img-cap">Runtime · Conversation Becomes Gameplay</figcaption>
+      </figure>
+    </div>
+    <div class="pipeline-section" style="margin-top:4vh">
       <div class="pipeline-label">Runtime Conversation Pipeline</div>
       <div class="pipeline" data-cols="6">
         <div class="step" data-anim>
@@ -936,30 +986,34 @@
     <div>Interaction · Virtual Humans</div>
     <div>13 / 20</div>
   </div>
-  <div class="frame grid-2-6-6" style="padding-top:5vh">
-    <div class="col">
+  <div class="frame" style="display:grid;grid-template-columns:6fr 6fr;gap:4vw;align-items:center;padding-top:4vh;min-height:78vh">
+    <figure class="frame-img" style="aspect-ratio:16/10;max-height:64vh;margin:0" data-anim="left">
+      <img src="images/image2/13-virtual-human.png" alt="AI 虚拟人 · 感知 / 理解 / 表现 / 约束">
+      <figcaption class="img-cap">Embodied AI · Sense → Reason → Perform</figcaption>
+    </figure>
+    <div class="col" style="gap:2.4vh">
       <div class="kicker" data-anim>虚拟人交互</div>
-      <h2 class="h-xl" style="font-size:5.2vw" data-anim>当角色能听、能说、能动，游戏界面会变成人与人的关系。</h2>
-      <p class="lead" data-anim>
-        AI 虚拟人把语音识别、LLM、语音合成、表情与动作驱动接起来。它不只是 NPC，更像一个可被引导的现场演员。
+      <h2 class="h-xl" style="font-size:4.2vw" data-anim>当角色能听、能说、能动，游戏界面会变成人与人的关系。</h2>
+      <p class="lead" style="font-size:1.5vw" data-anim>
+        AI 虚拟人把语音识别、LLM、语音合成、表情与动作驱动接起来——它不只是 NPC，更像一个可被引导的现场演员。
       </p>
-    </div>
-    <div class="col" style="gap:2.6vh">
-      <div class="rowline" data-anim>
-        <div class="k">感知</div><div class="v">听见玩家说话，读取镜头、动作、位置与游戏状态。</div><div class="m">Sense</div>
+      <div class="col" style="gap:2vh;margin-top:1vh">
+        <div class="rowline" data-anim>
+          <div class="k">感知</div><div class="v">听见玩家说话，读取镜头、动作、位置与游戏状态。</div><div class="m">Sense</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">理解</div><div class="v">根据角色人格、世界观、任务目标生成可控回应。</div><div class="m">Reason</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">表现</div><div class="v">用语音、口型、表情、动作和镜头调度返回玩家。</div><div class="m">Perform</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">约束</div><div class="v">用规则、内容审核和工具调用限制角色越界。</div><div class="m">Guard</div>
+        </div>
       </div>
-      <div class="rowline" data-anim>
-        <div class="k">理解</div><div class="v">根据角色人格、世界观、任务目标生成可控回应。</div><div class="m">Reason</div>
-      </div>
-      <div class="rowline" data-anim>
-        <div class="k">表现</div><div class="v">用语音、口型、表情、动作和镜头调度返回玩家。</div><div class="m">Perform</div>
-      </div>
-      <div class="rowline" data-anim>
-        <div class="k">约束</div><div class="v">用规则、内容审核和工具调用限制角色越界。</div><div class="m">Guard</div>
-      </div>
+      <p class="meta" style="margin-top:1vh;font-size:max(11px,.8vw)" data-anim>References: NVIDIA ACE / Fortnite AI-powered Conversations</p>
     </div>
   </div>
-  <p class="meta" style="position:absolute;left:6vw;bottom:14vh" data-anim>References: NVIDIA ACE / Fortnite AI-powered Conversations official materials</p>
   <div class="foot">
     <div>虚拟人不是聊天框</div>
     <div>Embodied AI Character</div>
@@ -1021,9 +1075,17 @@
     <div>Level 01 · Trae</div>
     <div>16 / 20</div>
   </div>
-  <div class="frame" style="padding-top:5vh">
-    <div class="kicker" data-anim>一档：只用 Trae 做雷霆战机</div>
-    <h2 class="h-xl" style="font-size:5vw;max-width:82vw" data-anim>目标不是复刻商业游戏，而是做出一个完整的射击循环。</h2>
+  <div class="frame" style="padding-top:4vh">
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:4vw;align-items:end">
+      <div>
+        <div class="kicker" data-anim>一档：只用 Trae 做雷霆战机</div>
+        <h2 class="h-xl" style="font-size:4.4vw" data-anim>目标不是复刻商业游戏，而是做出一个完整的射击循环。</h2>
+      </div>
+      <figure class="frame-img" style="aspect-ratio:16/10;max-height:28vh;margin:0" data-anim="right">
+        <img src="images/image2/16-trae-shooter.png" alt="Trae 协作开发雷霆战机">
+        <figcaption class="img-cap">Trae IDE · Plan → Code → Playable</figcaption>
+      </figure>
+    </div>
     <div class="pipeline-section">
       <div class="pipeline-label">Thunder Fighter Build Path</div>
       <div class="pipeline" data-cols="6">
@@ -1071,30 +1133,30 @@
     <div>Level 02 · MediaPipe</div>
     <div>17 / 20</div>
   </div>
-  <div class="frame grid-2-6-6" style="padding-top:5vh">
-    <div class="col">
+  <div class="frame" style="display:grid;grid-template-columns:6fr 6fr;gap:4vw;align-items:center;padding-top:4vh;min-height:78vh">
+    <figure class="frame-img" style="aspect-ratio:16/10;max-height:64vh;margin:0" data-anim="left">
+      <img src="images/image2/17-mediapipe-game.png" alt="MediaPipe 体感小游戏：手势驱动玩法">
+      <figcaption class="img-cap">Camera As Controller · Hand / Face Landmarks</figcaption>
+    </figure>
+    <div class="col" style="gap:2.4vh">
       <div class="kicker" data-anim>二档：Cursor / Trae + MediaPipe</div>
-      <h2 class="h-xl" style="font-size:5vw" data-anim>把摄像头输入变成一个简单玩法。</h2>
-      <p class="lead" data-anim>
-        这档适合电脑里有 Cursor 或 Trae、愿意处理一点点前端依赖的同学。目标是用 MediaPipe 手势或人脸点位控制游戏元素。
+      <h2 class="h-xl" style="font-size:4.2vw" data-anim>把摄像头输入变成一个简单玩法。</h2>
+      <p class="lead" style="font-size:1.5vw" data-anim>
+        电脑里有 Cursor 或 Trae、能处理一点前端依赖即可，目标是用手势或人脸点位控制游戏元素。
       </p>
-      <div class="callout" data-anim>
-        示例：张开手掌生成护盾，捏合手势发射能量球；或让脸部左右移动控制角色躲避落物。
-        <span class="callout-src">MediaPipe Mini Game · Camera As Controller</span>
-      </div>
-    </div>
-    <div class="col" style="gap:2.6vh">
-      <div class="rowline" data-anim>
-        <div class="k">输入</div><div class="v">摄像头 + hand landmarks / face landmarks。</div><div class="m">Input</div>
-      </div>
-      <div class="rowline" data-anim>
-        <div class="k">规则</div><div class="v">把关键点距离、方向、速度映射为游戏事件。</div><div class="m">Rules</div>
-      </div>
-      <div class="rowline" data-anim>
-        <div class="k">反馈</div><div class="v">角色移动、特效出现、分数变化、失败重开。</div><div class="m">Feedback</div>
-      </div>
-      <div class="rowline" data-anim>
-        <div class="k">边界</div><div class="v">先做一个手势，不要第一版就做人脸、手势、语音全家桶。</div><div class="m">Scope</div>
+      <div class="col" style="gap:2vh">
+        <div class="rowline" data-anim>
+          <div class="k">输入</div><div class="v">摄像头 + hand landmarks / face landmarks。</div><div class="m">Input</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">规则</div><div class="v">把关键点距离、方向、速度映射为游戏事件。</div><div class="m">Rules</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">反馈</div><div class="v">角色移动、特效出现、分数变化、失败重开。</div><div class="m">Feedback</div>
+        </div>
+        <div class="rowline" data-anim>
+          <div class="k">边界</div><div class="v">先做一个手势，不要第一版就做人脸、手势、语音全家桶。</div><div class="m">Scope</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1109,36 +1171,46 @@
     <div>Level 03 · Game Studios</div>
     <div>18 / 20</div>
   </div>
-  <div class="frame grid-2-7-5" style="padding-top:5vh">
-    <div class="col">
-      <div class="kicker" data-anim>三档：Codex / OpenClaw / Claude Code</div>
-      <h2 class="h-xl" style="font-size:4.8vw" data-anim>安装 Claude Code Game Studios，用“工作室流程”做游戏。</h2>
-      <p class="lead" style="font-size:1.55vw" data-anim>
-        它是一套游戏开发工作流模板：Claude Code 可直接用 slash commands；Codex / OpenClaw 可把它当作项目模板和流程参考。
-      </p>
-      <div class="callout" style="font-size:max(13px,1vw);padding:2vh 1.8vw" data-anim>
-        git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game<br>
-        cd my-game<br>
-        claude<br>
-        /start
-        <span class="callout-src">Install Path · Clone Template, Then Start Session</span>
+  <div class="frame" style="padding-top:4vh;gap:3vh;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:4vw;align-items:end">
+      <div>
+        <div class="kicker" data-anim>三档：Codex / OpenClaw / Claude Code</div>
+        <h2 class="h-xl" style="font-size:4.2vw" data-anim>安装 Claude Code Game Studios，用“工作室流程”做游戏。</h2>
       </div>
+      <figure class="frame-img" style="aspect-ratio:16/9;max-height:28vh;margin:0" data-anim="right">
+        <img src="images/image2/18-agent-studio.png" alt="多 agent 协作的游戏工作室">
+        <figcaption class="img-cap">Multi-Agent Studio · 5 Roles Around One Game</figcaption>
+      </figure>
     </div>
-    <div class="col" style="gap:2.2vh">
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Studio</div>
-        <div class="stat-nb" style="font-size:3.6vw">49</div>
-        <div class="stat-note">agents 覆盖设计、程序、美术、音频、叙事、QA 与制作管理。</div>
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:4vw;align-items:start;flex:1">
+      <div class="col" style="gap:2.2vh">
+        <p class="lead" style="font-size:1.45vw" data-anim>
+          一套游戏开发工作流模板：Claude Code 可直接用 slash commands；Codex / OpenClaw 可把它当作项目模板和流程参考。
+        </p>
+        <div class="callout" style="font-family:var(--mono);font-size:max(12px,.95vw);padding:1.8vh 1.6vw;line-height:1.7" data-anim>
+          git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game<br>
+          cd my-game<br>
+          claude<br>
+          /start
+          <span class="callout-src">Install Path · Clone Template, Then Start Session</span>
+        </div>
       </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Workflow</div>
-        <div class="stat-nb" style="font-size:3.6vw">72</div>
-        <div class="stat-note">skills 覆盖 brainstorm、setup-engine、prototype、playtest-report 等流程。</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Begin</div>
-        <div class="stat-nb" style="font-size:3.6vw">/start</div>
-        <div class="stat-note">从当前项目阶段开始，让系统先问清目标，再拆计划。</div>
+      <div class="col" style="gap:2.4vh;justify-content:flex-start">
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Studio</div>
+          <div class="stat-nb" style="font-size:3.8vw">49</div>
+          <div class="stat-note">agents 覆盖设计、程序、美术、音频、叙事、QA 与制作管理。</div>
+        </div>
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Workflow</div>
+          <div class="stat-nb" style="font-size:3.8vw">72</div>
+          <div class="stat-note">skills 覆盖 brainstorm、setup-engine、prototype、playtest-report 等流程。</div>
+        </div>
+        <div class="stat-card" data-anim>
+          <div class="stat-label">Begin</div>
+          <div class="stat-nb" style="font-size:3.4vw">/start</div>
+          <div class="stat-note">从当前项目阶段开始，让系统先问清目标，再拆计划。</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1191,10 +1263,16 @@
     <div>Closing · Takeaways</div>
     <div>20 / 20</div>
   </div>
-  <div class="frame" style="display:grid;grid-template-columns:6fr 6fr;gap:5vw;align-items:center;min-height:80vh">
+  <div class="deco-mask" aria-hidden="true" style="bottom:8vh;left:5vw;width:14vw;height:14vw;opacity:.32" data-anim>
+    <img src="images/jiuwei-mask.png" alt="">
+  </div>
+  <div class="deco-mask" aria-hidden="true" style="top:14vh;right:6vw;width:11vw;height:11vw;opacity:.22" data-anim>
+    <img src="images/zhuyan-mask.png" alt="">
+  </div>
+  <div class="frame" style="display:grid;grid-template-columns:6fr 6fr;gap:5vw;align-items:center;min-height:80vh;position:relative;z-index:3">
     <div class="col">
       <div class="kicker" data-anim>结尾</div>
-      <h1 class="h-hero" style="font-size:7.2vw" data-anim>AI 把创作门槛降低，但没有替代设计判断。</h1>
+      <h1 class="h-hero" style="font-size:6.6vw" data-anim>AI 把创作门槛降低，但没有替代设计判断。</h1>
       <p class="lead" data-anim>
         真正重要的仍然是：你想让人做什么、感到什么、记住什么。
       </p>
@@ -1225,35 +1303,23 @@
 <div id="nav"></div>
 
 <script>
+/* visualPlan v2：只给 hero 页注入“visual-ambient”全屏低对比度背景图，
+   保证文字始终可读；非 hero 页的图都改为在 HTML 里显式嵌入，避免遮挡。 */
 const visualPlan = {
-  3:['visual-backdrop','从符号到行为','02-installation.png'],
-  4:['visual-backdrop','高校游戏设计','04-education.png'],
-  5:['visual-ambient','传统文化互动设计','05-culture-interaction.png'],
-  6:['visual-side','概念设计','05-culture-interaction.png'],
-  7:['visual-band','原型闭环','07-prototype-workflow.png'],
-  9:['visual-backdrop','AI 辅助创作','07-prototype-workflow.png'],
-  10:['visual-ambient','AI 与游戏','10-ai-games.png'],
-  11:['visual-backdrop','AI 游戏版图','10-ai-games.png'],
-  12:['visual-band','LLM 交互管线','12-llm-interaction.png'],
-  13:['visual-side','虚拟人交互','13-virtual-human.png'],
-  14:['visual-ambient','零基础入门','16-trae-shooter.png'],
-  15:['visual-backdrop','三档工作坊','16-trae-shooter.png'],
-  16:['visual-band','Trae 雷霆战机','16-trae-shooter.png'],
-  17:['visual-side','MediaPipe 体感游戏','17-mediapipe-game.png'],
-  18:['visual-backdrop','Agent Studio','18-agent-studio.png'],
-  19:['visual-band','提示词设计卡','18-agent-studio.png'],
-  20:['visual-ambient','设计判断','01-cover.png']
+  5 :['05-culture-interaction.png','传统文化互动设计'],
+  10:['10-ai-games.png','AI 与游戏'],
+  14:['16-trae-shooter.png','零基础入门']
 };
 document.querySelectorAll('.slide').forEach((slide, i)=>{
   const page = i + 1;
   const plan = visualPlan[page];
   if(!plan) return;
-  slide.classList.add('has-visual', plan[0]);
+  slide.classList.add('has-visual','visual-ambient');
   const fig = document.createElement('figure');
   fig.className = 'visual-stage';
   fig.dataset.label = plan[1];
   const img = document.createElement('img');
-  img.src = `images/image2/${plan[2]}`;
+  img.src = `images/image2/${plan[0]}`;
   img.alt = `${plan[1]}视觉图`;
   img.loading = 'eager';
   fig.appendChild(img);
